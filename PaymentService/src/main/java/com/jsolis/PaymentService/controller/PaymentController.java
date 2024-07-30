@@ -4,9 +4,7 @@ import com.jsolis.PaymentService.model.Payment;
 import com.jsolis.PaymentService.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,5 +18,10 @@ public class PaymentController {
     @GetMapping("allPayments")
     public ResponseEntity<List<Payment>> getAllPayments(){
         return paymentService.getAllPayments();
+    }
+
+    @PostMapping("add")
+    public ResponseEntity<String> addPayment(@RequestBody Payment payment){
+        return paymentService.addPayment(payment);
     }
 }

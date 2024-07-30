@@ -25,4 +25,9 @@ public class PaymentService {
         }
         return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
+
+    public ResponseEntity<String> addPayment(Payment payment) {
+        paymentDao.save(payment);
+        return new ResponseEntity<>("Success", HttpStatus.CREATED);
+    }
 }
