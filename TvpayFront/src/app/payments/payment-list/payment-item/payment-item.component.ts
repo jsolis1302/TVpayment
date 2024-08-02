@@ -16,6 +16,7 @@ export class PaymentItemComponent implements OnInit {
   }
 
   onSelected(){
+
     this.paymentSelected.emit();
   }
 

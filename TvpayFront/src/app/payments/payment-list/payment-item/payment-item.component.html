@@ -4,8 +4,8 @@
     (click)="onSelected()"
     >
     <div class="pull-left">
-        <h4 class="list-group-item-heading">{{payment.amount}}</h4>
-        <p class="list-group-item-text">{{payment.payDate}}</p>
+        <h4 class="list-group-item-heading">{{payment.amount | currency}}</h4>
+        <p class="list-group-item-text">{{payment.payDate | date:"dd MMM yyyy"}}</p>
     </div>
     <span class="pull-right">
         <img 

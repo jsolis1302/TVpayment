@@ -9,6 +9,7 @@ import { PaymentDetailComponent } from './payments/payment-detail/payment-detail
 import { PaymentItemComponent } from './payments/payment-list/payment-item/payment-item.component';
 import { PaymentListComponent } from './payments/payment-list/payment-list.component';
 import { PaymentEditComponent } from './payments/payment-edit/payment-edit.component';
+import { DropDownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PaymentEditComponent } from './payments/payment-edit/payment-edit.compo
     PaymentComponent,
     PaymentDetailComponent,
     PaymentItemComponent,
-    PaymentListComponent
+    PaymentListComponent,
+    DropDownDirective
   ],
   imports: [
     BrowserModule,
