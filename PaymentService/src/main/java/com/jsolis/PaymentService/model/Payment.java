@@ -1,9 +1,6 @@
 package com.jsolis.PaymentService.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.context.annotation.Primary;
 
@@ -19,5 +16,7 @@ public class Payment {
     private Date payDate;
     private String url;
     private double amount;
+    @Column(name = "userId", nullable = true)
+    private Integer userId;
     /*TODO user id */
 }
