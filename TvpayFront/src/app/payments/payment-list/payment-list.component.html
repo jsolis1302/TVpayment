@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success">New payment</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <app-payment-item  *ngFor="let payment of payments"
+        [payment] = "payment"
+        (paymentSelected)="onPaymentSelected(payment)">
+    </app-payment-item>
+    </div>
+</div>

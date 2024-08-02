@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-5">
+        <app-payment-list >
+    </app-payment-list>
+    </div>
+    <div class="col-md-7">
+        <app-payment-detail *ngIf="selectedPayment; else infoText"
+        [payment]="selectedPayment"></app-payment-detail>
+    <ng-template #infoText>
+        <p>Please select a Payment!</p>
+    </ng-template>
+    </div>
+</div>
