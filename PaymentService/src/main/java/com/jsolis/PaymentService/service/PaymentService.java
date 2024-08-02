@@ -30,4 +30,14 @@ public class PaymentService {
         paymentDao.save(payment);
         return new ResponseEntity<>("Success", HttpStatus.CREATED);
     }
+
+    public ResponseEntity<Payment> updatePayment(Payment payment) {
+        paymentDao.save(payment);
+        return new ResponseEntity<>(payment, HttpStatus.OK);
+    }
+
+    public ResponseEntity<Integer> deletePayment(int payId){
+        paymentDao.deleteById(payId);
+        return new ResponseEntity<>(payId, HttpStatus.OK);
+    }
 }

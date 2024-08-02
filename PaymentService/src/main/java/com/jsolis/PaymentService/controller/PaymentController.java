@@ -24,4 +24,15 @@ public class PaymentController {
     public ResponseEntity<String> addPayment(@RequestBody Payment payment){
         return paymentService.addPayment(payment);
     }
+
+    @PutMapping("update")
+    public ResponseEntity<Payment> updatePayment(@RequestBody Payment payment){
+        return paymentService.updatePayment(payment);
+    }
+
+    @DeleteMapping("delete/{payId}")
+    public ResponseEntity<Integer> deletePayment(@PathVariable int payId){
+        return paymentService.deletePayment(payId);
+    }
+
 }
