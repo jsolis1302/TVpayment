@@ -15,9 +15,15 @@ public class PaymentController {
     @Autowired
     PaymentService paymentService;
 
+    @CrossOrigin
     @GetMapping("allPayments")
     public ResponseEntity<List<Payment>> getAllPayments(){
         return paymentService.getAllPayments();
+    }
+
+    @GetMapping("payment/{payId}")
+    public ResponseEntity<Payment> getPaymentById(@PathVariable int payId){
+        return paymentService.getPaymentById(payId);
     }
 
     @PostMapping("add")

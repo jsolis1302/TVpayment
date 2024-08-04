@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PaymentService {
@@ -39,5 +40,11 @@ public class PaymentService {
     public ResponseEntity<Integer> deletePayment(int payId){
         paymentDao.deleteById(payId);
         return new ResponseEntity<>(payId, HttpStatus.OK);
+    }
+
+    public ResponseEntity<Payment> getPaymentById(int payId) {
+
+        Optional<Payment> p = paymentDao.findById(payId);
+        return new ResponseEntity<>(p.orElse(new Payment()),HttpStatus.OK);
     }
 }
