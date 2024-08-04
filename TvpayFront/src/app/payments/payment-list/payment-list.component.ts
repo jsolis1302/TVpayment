@@ -23,7 +23,11 @@ export class PaymentListComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute){}
   ngOnInit(){
-    this.payments = this.paymentService.getPayments();
+    //this.payments = this.paymentService.getPayments();
+    //this.payments = this.paymentService.getPayments().subscribe();
+    this.paymentService.getPayments().subscribe((res: Payment[])=>{
+      this.payments = res
+    });
   }
 
   // onPaymentSelected(payment:Payment){

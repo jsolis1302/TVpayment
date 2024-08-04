@@ -11,6 +11,8 @@ import { PaymentListComponent } from './payments/payment-list/payment-list.compo
 import { PaymentEditComponent } from './payments/payment-edit/payment-edit.component';
 import { DropDownDirective } from './shared/dropdown.directive';
 import { PaymentStartComponent } from './payments/payment-start/payment-start.component';
+import { HttpClient, HttpClientModule, provideHttpClient,withFetch } from '@angular/common/http';
+import { PaymentService } from './payments/payment.service';
 
 @NgModule({
   declarations: [
@@ -25,11 +27,18 @@ import { PaymentStartComponent } from './payments/payment-start/payment-start.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
-    provideClientHydration()
+   provideClientHydration(),
+   provideHttpClient(withFetch()),
+    PaymentService
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+function providerHttpClient(): import("@angular/core").Provider | import("@angular/core").EnvironmentProviders {
+  throw new Error('Function not implemented.');
+}
+
