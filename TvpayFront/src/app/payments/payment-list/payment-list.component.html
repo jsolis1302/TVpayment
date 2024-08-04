@@ -6,9 +6,9 @@
 <hr>
 <div class="row">
     <div class="col-xs-12">
-        <app-payment-item  *ngFor="let payment of payments"
+        <app-payment-item  *ngFor="let payment of payments; let i =index"
         [payment] = "payment"
-        (paymentSelected)="onPaymentSelected(payment)">
+        [index]="i">
     </app-payment-item>
     </div>
 </div>

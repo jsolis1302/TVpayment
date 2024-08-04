@@ -9,6 +9,7 @@ import { Payment } from '../../payment.model';
 export class PaymentItemComponent implements OnInit {
 
   @Input() payment!:Payment;
+  @Input() index!: number;
   @Output() paymentSelected = new EventEmitter<void>();
 
   ngOnInit(): void {
