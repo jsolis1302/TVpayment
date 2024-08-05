@@ -4,6 +4,7 @@ import path from 'path';
 import { PaymentComponent } from './payments/payment.component';
 import { PaymentDetailComponent } from './payments/payment-detail/payment-detail.component';
 import { PaymentStartComponent } from './payments/payment-start/payment-start.component';
+import { PaymentEditComponent } from './payments/payment-edit/payment-edit.component';
 
 const routes: Routes = [
 
@@ -11,6 +12,8 @@ const routes: Routes = [
   {path:'payments', component:PaymentComponent,children:[
     { path: '', component: PaymentStartComponent },
     { path: ':id', component: PaymentDetailComponent },
+    { path: ':id/edit', component: PaymentEditComponent },
+
 
   ] }
 

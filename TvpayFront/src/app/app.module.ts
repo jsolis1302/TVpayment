@@ -13,6 +13,7 @@ import { DropDownDirective } from './shared/dropdown.directive';
 import { PaymentStartComponent } from './payments/payment-start/payment-start.component';
 import { HttpClient, HttpClientModule, provideHttpClient,withFetch } from '@angular/common/http';
 import { PaymentService } from './payments/payment.service';
+import { DataStorageService } from './shared/data-storage.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PaymentService } from './payments/payment.service';
   providers: [
    provideClientHydration(),
    provideHttpClient(withFetch()),
-    PaymentService
+    PaymentService,
+    DataStorageService
   ],
   bootstrap: [AppComponent]
 })

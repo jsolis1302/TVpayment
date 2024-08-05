@@ -8,7 +8,7 @@ import { Payment } from './payment.model';
 })
 export class PaymentComponent implements OnInit {
 
-  selectedPayment!:Payment;
+  //selectedPayment!:Payment;
 
   constructor(){};
 
