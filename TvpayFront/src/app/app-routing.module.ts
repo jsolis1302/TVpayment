@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/payments', pathMatch: 'full' },
   {path:'payments', component:PaymentComponent,children:[
     { path: '', component: PaymentStartComponent },
+    { path: 'new', component: PaymentEditComponent },
     { path: ':id', component: PaymentDetailComponent },
     { path: ':id/edit', component: PaymentEditComponent },
 

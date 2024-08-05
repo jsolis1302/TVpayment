@@ -10,15 +10,15 @@ export class PaymentItemComponent implements OnInit {
 
   @Input() payment!:Payment;
   @Input() index!: number;
-  @Output() paymentSelected = new EventEmitter<void>();
+  //@Output() paymentSelected = new EventEmitter<void>();
 
   ngOnInit(): void {
       
   }
 
-  onSelected(){
+  // onSelected(){
 
-    this.paymentSelected.emit();
-  }
+  //   this.paymentSelected.emit();
+  // }
 
 }

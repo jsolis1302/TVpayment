@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { DataStorageService } from '../shared/data-storage.service';
 
 
@@ -18,8 +18,8 @@ export class HeaderComponent {
     this.dataStorageService.fetchpayments().subscribe();
   }
   
-  onSelect(feature: string){
-    //this.featureSelected.emit(feature);
-  }
+  // onSelect(feature: string){
+  //   this.featureSelected.emit(feature);
+  // }
 
 }

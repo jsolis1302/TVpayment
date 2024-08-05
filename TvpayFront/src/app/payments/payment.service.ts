@@ -1,7 +1,8 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+
 import { Payment } from './payment.model';
-import { HttpClient } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
+//import { HttpClient } from '@angular/common/http';
 
 // @Injectable({
 //   providedIn: 'root'
@@ -11,7 +12,7 @@ import { Observable, Subject } from 'rxjs';
 export class PaymentService {
   paymentsChanged = new Subject<Payment[]>();
 
-  paymentSelected = new EventEmitter<Payment>();
+  //paymentSelected = new EventEmitter<Payment>();
   //readonly APIUrl = "http://localhost:8080/payment"
 
   // private payments: Payment[] = [

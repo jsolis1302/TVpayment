@@ -27,6 +27,8 @@ ngOnInit() {
       (params: Params) => {
         this.id = +params['id'];
         this.payment = this.paymentService.getPayment(this.id);
+
+        console.log(this.payment)
       }
     );
 }
