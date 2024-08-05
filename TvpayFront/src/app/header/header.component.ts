@@ -11,6 +11,7 @@ export class HeaderComponent {
 
   constructor(private dataStorageService: DataStorageService){}
 
+  
   @Output() featureSelected = new EventEmitter<string>();
 
   onFetchData(){
