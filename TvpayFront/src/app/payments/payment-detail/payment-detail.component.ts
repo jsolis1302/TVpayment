@@ -27,10 +27,13 @@ ngOnInit() {
       (params: Params) => {
         this.id = +params['id'];
         this.payment = this.paymentService.getPayment(this.id);
-
-        console.log(this.payment)
       }
     );
+}
+
+onEditPayment() {
+  this.router.navigate(['edit'], {relativeTo: this.route});
+  // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
 }
 
   //@Input() payment!: Payment

@@ -1,1 +1,58 @@
-<p>payment-edit works!</p>
+<div class="row">
+    <div class="col-xs-12">
+      <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-xs-12">
+            <button
+              type="submit"
+              class="btn btn-success"
+              [disabled]="!paymentForm.valid">Save</button>
+            <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="amount">Amount</label>
+              <input
+                type="text"
+                id="amount"
+                formControlName="amount"
+                class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="url">Image URL</label>
+              <input
+                type="text"
+                id="url"
+                formControlName="url"
+                class="form-control"
+                #imagePath>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <img [src]="imagePath.value" class="img-responsive">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="description">Payment Date</label>
+              <input
+                type="date"
+                id="paymentDate"
+                class="form-control"
+                formControlName="paymentDate">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

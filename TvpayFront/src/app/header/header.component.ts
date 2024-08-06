@@ -17,6 +17,10 @@ export class HeaderComponent {
   onFetchData(){
     this.dataStorageService.fetchpayments().subscribe();
   }
+
+  onSaveData(){
+    this.dataStorageService.storePayments();
+  }
   
   // onSelect(feature: string){
   //   this.featureSelected.emit(feature);

@@ -36,8 +36,6 @@ export class PaymentListComponent implements OnInit, OnDestroy {
       });
 
       this.payments = this.paymentService.getPayments();
-
-      console.log(this.payments)
     
 
     //this.payments = this.paymentService.getPayments();
@@ -45,6 +43,10 @@ export class PaymentListComponent implements OnInit, OnDestroy {
     // this.paymentService.getPayments().subscribe((res: Payment[])=>{
     //   this.payments = res
     // });
+  }
+
+  onNewPayment(){
+    this.router.navigate(['new'], {relativeTo: this.route});
   }
 
   ngOnDestroy(): void {

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,7 +12,7 @@ import { PaymentListComponent } from './payments/payment-list/payment-list.compo
 import { PaymentEditComponent } from './payments/payment-edit/payment-edit.component';
 import { DropDownDirective } from './shared/dropdown.directive';
 import { PaymentStartComponent } from './payments/payment-start/payment-start.component';
-import { HttpClient, HttpClientModule, provideHttpClient,withFetch } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient,withFetch } from '@angular/common/http';
 import { PaymentService } from './payments/payment.service';
 import { DataStorageService } from './shared/data-storage.service';
 
@@ -24,12 +25,16 @@ import { DataStorageService } from './shared/data-storage.service';
     PaymentItemComponent,
     PaymentListComponent,
     DropDownDirective,
-    PaymentStartComponent
+    PaymentStartComponent,
+    PaymentEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   providers: [
    provideClientHydration(),

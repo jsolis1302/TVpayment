@@ -36,6 +36,16 @@ export class PaymentService {
     return this.payments[index];
   }
 
+  updatePayment(index: number, newPayment: Payment) {
+    this.payments[index] = newPayment;
+    this.paymentsChanged.next(this.payments.slice());
+  }
+
+  addPayment(payment: Payment) {
+    this.payments.push(payment);
+    this.paymentsChanged.next(this.payments.slice());
+  }
+
 
   // getPayments():Observable<Payment[]>{ 
   //   //return this.payments.slice();
