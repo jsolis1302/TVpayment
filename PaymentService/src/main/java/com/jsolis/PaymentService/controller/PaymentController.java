@@ -8,14 +8,16 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("payment")
+@CrossOrigin(origins="http://localhost:4200")
 public class PaymentController {
 
     @Autowired
     PaymentService paymentService;
 
-    @CrossOrigin
+
     @GetMapping("allPayments")
     public ResponseEntity<List<Payment>> getAllPayments(){
         return paymentService.getAllPayments();
@@ -34,6 +36,12 @@ public class PaymentController {
     @PutMapping("update")
     public ResponseEntity<Payment> updatePayment(@RequestBody Payment payment){
         return paymentService.updatePayment(payment);
+    }
+
+    @PutMapping("updateAll")
+    public ResponseEntity<List<Payment>>updateAll(@RequestBody List<Payment> payments){
+
+        return paymentService.updateAll(payments);
     }
 
     @DeleteMapping("delete/{payId}")

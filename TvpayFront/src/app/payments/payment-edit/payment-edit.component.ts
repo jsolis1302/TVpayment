@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl,  Validators } from '@angular/forms';
 import { PaymentService } from '../payment.service';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-payment-edit',
@@ -37,6 +38,7 @@ export class PaymentEditComponent implements OnInit {
     if (this.editMode) {
       this.paymentService.updatePayment(this.id, this.paymentForm.value);
     } else {
+      console.log(this.paymentForm.value.payDate);
       this.paymentService.addPayment(this.paymentForm.value);
     }
     this.onCancel();
@@ -47,14 +49,17 @@ export class PaymentEditComponent implements OnInit {
   }
 
   private initForm() {
-    let paymentDate = new Date();
+    let paymentDate = new Date()
     let amount = 0;
     let url = '';
     let userId = 0;
+
+
   
 
     if (this.editMode) {
       const payment = this.paymentService.getPayment(this.id);
+      //let formattedDt = formatDate(payment.payDate, 'yyyy-MM-dd hh:mm:ssZZZZZ', 'en_US')
       paymentDate = payment.payDate;
       amount = payment.amount;
       url = payment.url;
@@ -63,8 +68,9 @@ export class PaymentEditComponent implements OnInit {
 
     this.paymentForm = new FormGroup({
       paymentDate: new FormControl(paymentDate, Validators.required),
+      
       amount: new FormControl(amount, Validators.required),
-      url: new FormControl(url, Validators.required),
+      url: new FormControl(url),
       userId: new FormControl(userId, Validators.required),
 
 

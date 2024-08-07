@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 import { Payment } from './payment.model';
+import { DatePipe } from '@angular/common';
 //import { HttpClient } from '@angular/common/http';
 
 // @Injectable({
@@ -12,14 +13,6 @@ import { Payment } from './payment.model';
 export class PaymentService {
   paymentsChanged = new Subject<Payment[]>();
 
-  //paymentSelected = new EventEmitter<Payment>();
-  //readonly APIUrl = "http://localhost:8080/payment"
-
-  // private payments: Payment[] = [
-  //   new Payment(1,new Date(), "https://img.freepik.com/free-vector/hand-drawn-cartoon-dollar-sign-illustration_23-2150982971.jpg", 935, 1),
-  //   new Payment(2,new Date(), "https://img.freepik.com/free-vector/hand-drawn-cartoon-dollar-sign-illustration_23-2150982971.jpg", 937, 1)
-  // ];
-
   private payments: Payment[] = [];
   constructor() { }
 
@@ -29,6 +22,7 @@ export class PaymentService {
   }
 
   getPayments(){
+    console.log(this.payments);
     return this.payments.slice();
   }
 
@@ -42,8 +36,14 @@ export class PaymentService {
   }
 
   addPayment(payment: Payment) {
+   // let latest_date = this.datepipe.transform(payment.payDate, 'yyyy-MM-ddT06 HH:mm:ss')
+   
+    //payment.payDate = new Date(payment.payDate)
+    console.log(payment.payDate);
     this.payments.push(payment);
+    //console.log(this.payments)
     this.paymentsChanged.next(this.payments.slice());
+    //console.log(this.paymentsChanged);
   }
 
 

@@ -13,7 +13,7 @@ export class PaymentItemComponent implements OnInit {
   //@Output() paymentSelected = new EventEmitter<void>();
 
   ngOnInit(): void {
-      
+     //console.log(this.payment.payDate) 
   }
 
   // onSelected(){

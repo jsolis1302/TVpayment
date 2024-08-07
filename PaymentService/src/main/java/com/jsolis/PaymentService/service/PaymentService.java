@@ -47,4 +47,12 @@ public class PaymentService {
         Optional<Payment> p = paymentDao.findById(payId);
         return new ResponseEntity<>(p.orElse(new Payment()),HttpStatus.OK);
     }
+
+    public ResponseEntity<List<Payment>> updateAll(List<Payment> payments) {
+        for(Payment payment: payments){
+            paymentDao.save(payment);
+        }
+
+        return new ResponseEntity<>(paymentDao.findAll(), HttpStatus.OK);
+    }
 }
