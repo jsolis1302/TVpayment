@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 import { Payment } from './payment.model';
-import { DatePipe } from '@angular/common';
+//import { DatePipe } from '@angular/common';
 //import { HttpClient } from '@angular/common/http';
 
 // @Injectable({
@@ -14,6 +14,8 @@ export class PaymentService {
   paymentsChanged = new Subject<Payment[]>();
 
   private payments: Payment[] = [];
+  //constructor(private datePipe: DatePipe) { }
+
   constructor() { }
 
   setPayments(payments: Payment[]) {
@@ -22,7 +24,6 @@ export class PaymentService {
   }
 
   getPayments(){
-    console.log(this.payments);
     return this.payments.slice();
   }
 
@@ -36,14 +37,11 @@ export class PaymentService {
   }
 
   addPayment(payment: Payment) {
-   // let latest_date = this.datepipe.transform(payment.payDate, 'yyyy-MM-ddT06 HH:mm:ss')
-   
-    //payment.payDate = new Date(payment.payDate)
-    console.log(payment.payDate);
+    //let latest_date = this.datePipe.transform(payment.payDate, 'yyyy-MM-ddT06 HH:mm:ss')
+
     this.payments.push(payment);
-    //console.log(this.payments)
     this.paymentsChanged.next(this.payments.slice());
-    //console.log(this.paymentsChanged);
+
   }
 
 

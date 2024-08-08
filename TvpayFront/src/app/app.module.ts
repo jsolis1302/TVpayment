@@ -16,6 +16,7 @@ import { HttpClientModule, provideHttpClient,withFetch } from '@angular/common/h
 import { PaymentService } from './payments/payment.service';
 import { DataStorageService } from './shared/data-storage.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { DataStorageService } from './shared/data-storage.service';
    provideClientHydration(),
    provideHttpClient(withFetch()),
     PaymentService,
-    DataStorageService
+    DataStorageService,
+   
   ],
   bootstrap: [AppComponent]
 })

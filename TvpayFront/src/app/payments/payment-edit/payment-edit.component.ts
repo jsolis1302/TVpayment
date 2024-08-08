@@ -38,7 +38,7 @@ export class PaymentEditComponent implements OnInit {
     if (this.editMode) {
       this.paymentService.updatePayment(this.id, this.paymentForm.value);
     } else {
-      console.log(this.paymentForm.value.payDate);
+    
       this.paymentService.addPayment(this.paymentForm.value);
     }
     this.onCancel();
@@ -49,7 +49,7 @@ export class PaymentEditComponent implements OnInit {
   }
 
   private initForm() {
-    let paymentDate = new Date()
+    let payDate = new Date()
     let amount = 0;
     let url = '';
     let userId = 0;
@@ -60,14 +60,14 @@ export class PaymentEditComponent implements OnInit {
     if (this.editMode) {
       const payment = this.paymentService.getPayment(this.id);
       //let formattedDt = formatDate(payment.payDate, 'yyyy-MM-dd hh:mm:ssZZZZZ', 'en_US')
-      paymentDate = payment.payDate;
+      payDate = payment.payDate;
       amount = payment.amount;
       url = payment.url;
       userId = payment.userId;
     }
 
     this.paymentForm = new FormGroup({
-      paymentDate: new FormControl(paymentDate, Validators.required),
+      payDate: new FormControl(payDate, Validators.required),
       
       amount: new FormControl(amount, Validators.required),
       url: new FormControl(url),

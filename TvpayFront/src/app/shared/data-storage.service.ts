@@ -14,7 +14,6 @@ export class DataStorageService {
 
   storePayments(){
     const payments = this.paymentService.getPayments();
-    console.log(payments);
     this.http
     .put(
       'http://localhost:8080/payment/updateAll',

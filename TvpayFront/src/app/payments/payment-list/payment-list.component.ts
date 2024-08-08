@@ -36,7 +36,7 @@ export class PaymentListComponent implements OnInit, OnDestroy {
       });
 
       this.payments = this.paymentService.getPayments();
-      console.log(this.payments)
+    
     
 
     //this.payments = this.paymentService.getPayments();
