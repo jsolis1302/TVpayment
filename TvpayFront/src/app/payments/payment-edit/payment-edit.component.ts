@@ -51,7 +51,7 @@ export class PaymentEditComponent implements OnInit {
   private initForm() {
     let payDate = new Date()
     let amount = 0;
-    let imageId = 0;
+    let imageId = null;
     let userId = 0;
 
 
