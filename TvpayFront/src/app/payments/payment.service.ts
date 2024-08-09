@@ -39,6 +39,8 @@ export class PaymentService {
   addPayment(payment: Payment) {
     //let latest_date = this.datePipe.transform(payment.payDate, 'yyyy-MM-ddT06 HH:mm:ss')
 
+    payment.imageId = 1;
+
     this.payments.push(payment);
     this.paymentsChanged.next(this.payments.slice());
 

@@ -51,7 +51,7 @@ export class PaymentEditComponent implements OnInit {
   private initForm() {
     let payDate = new Date()
     let amount = 0;
-    let url = '';
+    let imageId = 0;
     let userId = 0;
 
 
@@ -62,7 +62,7 @@ export class PaymentEditComponent implements OnInit {
       //let formattedDt = formatDate(payment.payDate, 'yyyy-MM-dd hh:mm:ssZZZZZ', 'en_US')
       payDate = payment.payDate;
       amount = payment.amount;
-      url = payment.url;
+      imageId = payment.imageId;
       userId = payment.userId;
     }
 
@@ -70,7 +70,7 @@ export class PaymentEditComponent implements OnInit {
       payDate: new FormControl(payDate, Validators.required),
       
       amount: new FormControl(amount, Validators.required),
-      url: new FormControl(url),
+      imageId: new FormControl(imageId),
       userId: new FormControl(userId, Validators.required),
 
 
